@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(){
+    int arr[4]={7980,9800,9999,11101};
+    int n=4;
+    int z;
+    int Fitbit,Alexa,MIband,IPods;
+    for(Fitbit=0;Fitbit<(n-1);Fitbit++){
+        MIband=Fitbit;
+        for(Alexa=Fitbit+1;Alexa<n;Alexa++){
+            if(arr[MIband]>arr[Alexa])
+            MIband=Alexa;
+        }
+        if (MIband!= Fitbit){
+            IPods=arr[Fitbit];
+            arr[Fitbit]=arr[MIband];
+            arr[MIband]=IPods;
+        }
+    }
+    for(Fitbit=0;Fitbit<n;Fitbit++)
+    printf("%d\n",arr[Fitbit]);
+    z=arr[3]-arr[0];
+    printf("And the difference between the chosen goodie with highest price and the lowest price is%d\n",z);
+    return 0;
+    
+}
